@@ -20,6 +20,7 @@
 - Remove ; at extension=pdo_mysql
 - Remove ; at extension=soap
 - Remove ; at extension=fileinfo
+- Remove ; at extension=zip
 - Remove ; at extension_dir = "ext" and change "ext"=>"URL\ext"
 - Step 3: Connect between Apache and PHP
 - Open C:\Apache24\conf\httpd.conf
