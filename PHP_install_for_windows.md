@@ -1,0 +1,31 @@
+- Install Apache|PHP|MySQL
+- Step 1: Install and Set up Apache
+- Open CMD select run as Administrator
+- cd C:\Apache24\bin =>Enter
+- parse: httpd -k install =>Enter
+- Open C:\Apache24\conf\httpd.conf
+- Remove # at ServerName www.example.com:80 => Restart
+- Remove # at LoadModule rewrite_module modules/mod_rewrite.so => Restart
+- Search All AllowOverride None changes AllowOverride All
+- if want Apache on service need Open CMD select run as Administrator
+- parse: sc delete Apache2.4
+- Step 2: Install and Set up PHP
+- move from PHP Open CMD of git
+- parse: cp php.ini-production|development php.ini =>Enter
+- Open php.ini
+- Remove ; at extension=curl
+- Remove ; at extension=mysqli
+- Remove ; at extension=gd
+- Remove ; at extension=mbstring
+- Remove ; at extension=pdo_mysql
+- Remove ; at extension=soap
+- Remove ; at extension=fileinfo
+- Remove ; at extension=zip
+- Remove ; at extension_dir = "ext" and change "ext"=>"URL\ext"
+- Step 3: Connect between Apache and PHP
+- Open C:\Apache24\conf\httpd.conf
+- Add Code last document
+- PHPIniDir "d:/PHP/php-8.2.2"
+- LoadModule php_module "d:/PHP/php-8.2.2/php8apache2_4.dll"
+- AddType application/x-httpd-php .php
+- Restart Apache server
